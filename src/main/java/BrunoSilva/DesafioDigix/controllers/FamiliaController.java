@@ -3,6 +3,7 @@ package BrunoSilva.DesafioDigix.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,7 +28,7 @@ public class FamiliaController {
     @ApiResponse(responseCode = "201")
     @PostMapping(consumes = { "application/json" })
     public ResponseEntity<FamiliaPontoResponseDTO> retornarFamiliaCriada(@RequestBody FamiliaRequestDTO novaFamilia){
-        return ResponseEntity.ok(familiaService.criarFamiliaComPonto(novaFamilia));
+        return ResponseEntity.status(HttpStatus.CREATED).body(familiaService.criarFamiliaComPonto(novaFamilia));
     }
 
     @Operation(summary = "Chamar uma lista de de familias ordenadas por ponto decrescente")

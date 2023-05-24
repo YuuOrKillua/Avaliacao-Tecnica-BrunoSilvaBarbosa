@@ -45,10 +45,6 @@ public class Familia {
         this.rendaTotal = rendaTotal;
         this.dependentes = dependentes;
     }
-    //contructor para os pontos
-    public Familia(int pontos){
-        this.pontos = pontos;
-    }
     //Setters (não vou passar no lombok @Setter, porque é errado settar id).
     public void setNomeDoResponsavel(String nomeDoResponsavel) {
         this.nomeDoResponsavel = nomeDoResponsavel;
@@ -59,7 +55,7 @@ public class Familia {
     public void setDependentes(int dependentes) {
         this.dependentes = dependentes;
     }
-    public void setPontos(int ponto) {
+    public void setPontos(int pontos) {
         this.pontos = pontos;
     }
     //Getters
