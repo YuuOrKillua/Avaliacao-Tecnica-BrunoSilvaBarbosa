@@ -2,19 +2,13 @@ package BrunoSilva.DesafioDigix.services;
 
 import java.util.List;
 
-import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
-import BrunoSilva.DesafioDigix.DTOs.requests.FamiliaPontoRequestDTO;
 import BrunoSilva.DesafioDigix.DTOs.requests.FamiliaRequestDTO;
 import BrunoSilva.DesafioDigix.DTOs.responses.FamiliaPontoResponseDTO;
-import BrunoSilva.DesafioDigix.DTOs.responses.FamiliaResponseDTO;
 import BrunoSilva.DesafioDigix.models.Familia;
 import BrunoSilva.DesafioDigix.repositories.FamiliaRepository;
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @Service
 public class FamiliaService {
@@ -23,7 +17,7 @@ public class FamiliaService {
 
     //Recebo uma familia postada e passo por um teste para fazer o ponto comforme informações da familia.
     public int fazerPontosFamilia(FamiliaRequestDTO novaFamilia){
-        //Dados que seram recebidos quando uma familia for criada.
+        //Dados que serão recebidos quando uma familia for criada.
         float rendaTotalFamilia = novaFamilia.getRendaTotal();
         int dependentesFamilia = novaFamilia.getDependentes();
         //Pontos começam valendo 0.
