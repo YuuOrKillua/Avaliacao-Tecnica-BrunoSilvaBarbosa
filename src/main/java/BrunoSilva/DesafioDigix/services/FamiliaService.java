@@ -56,16 +56,16 @@ public class FamiliaService {
     }
 
     //Aqui coloco o ponto criado no outro método.
-    public ResponseEntity<FamiliaPontoResponseDTO> criarFamiliaComPonto( FamiliaRequestDTO novaFamilia) {
+    public FamiliaPontoResponseDTO criarFamiliaComPonto( FamiliaRequestDTO novaFamilia) {
         int pontosTotais = fazerPontosFamilia(novaFamilia);
         //Lógica para colocar ponto na familia já criada.
         Familia familiaQueGanharaPontos = new Familia(novaFamilia.getNomeDoResponsavel(), novaFamilia.getRendaTotal(),
         novaFamilia.getDependentes(), pontosTotais);
         familiaRepository.save(familiaQueGanharaPontos);
-        return ResponseEntity.ok(new FamiliaPontoResponseDTO(familiaQueGanharaPontos.getId(),
+        return new FamiliaPontoResponseDTO(familiaQueGanharaPontos.getId(),
                 familiaQueGanharaPontos.getNomeDoResponsavel(),
                 familiaQueGanharaPontos.getRendaTotal(), familiaQueGanharaPontos.getDependentes(),
-                familiaQueGanharaPontos.getPontos()));
+                familiaQueGanharaPontos.getPontos());
     }
 
     public List<Familia> buscarPorOrdemDePontos() {

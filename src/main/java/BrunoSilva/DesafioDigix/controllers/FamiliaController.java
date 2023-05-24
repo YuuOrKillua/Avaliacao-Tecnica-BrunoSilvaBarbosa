@@ -26,7 +26,7 @@ public class FamiliaController {
     @Operation(summary = "Retorna uma familia cadastrada no service")
     @ApiResponse(responseCode = "201")
     @PostMapping(consumes = { "application/json" })
-    public ResponseEntity<ResponseEntity<FamiliaPontoResponseDTO>> retornarFamiliaCriada(@RequestBody FamiliaRequestDTO novaFamilia){
+    public ResponseEntity<FamiliaPontoResponseDTO> retornarFamiliaCriada(@RequestBody FamiliaRequestDTO novaFamilia){
         return ResponseEntity.ok(familiaService.criarFamiliaComPonto(novaFamilia));
     }
 
