@@ -28,7 +28,7 @@ public class FamiliaController {
     @ApiResponse(responseCode = "201")
     @PostMapping(consumes = { "application/json" })
     public ResponseEntity<FamiliaPontoResponseDTO> retornarFamiliaCriada(@RequestBody FamiliaRequestDTO novaFamilia){
-        return ResponseEntity.status(HttpStatus.CREATED).body(familiaService.criarFamiliaComPonto(novaFamilia));
+        return ResponseEntity.status(HttpStatus.CREATED).body(familiaService.retornarESalvarFamilia(novaFamilia));
     }
 
     @Operation(summary = "Chamar uma lista de de familias ordenadas por ponto decrescente")
